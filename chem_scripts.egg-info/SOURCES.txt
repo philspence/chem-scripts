@@ -1,0 +1,8 @@
+README.md
+setup.py
+chem_scripts/__init__.py
+chem_scripts/chem_scripts.py
+chem_scripts.egg-info/PKG-INFO
+chem_scripts.egg-info/SOURCES.txt
+chem_scripts.egg-info/dependency_links.txt
+chem_scripts.egg-info/top_level.txt

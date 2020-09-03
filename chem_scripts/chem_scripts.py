@@ -21,7 +21,7 @@ def sdfs_in_dir(dir_path):
     return [join(dir_path, f) for f in os.listdir(dir_path) if f.endswith('.sdf')]
 
 
-def mols_to_2d(mols, out_file, per_row=4, img_size=(600, 600), legends=False):
+def mols_to_img_file(mols, out_file, per_row=4, img_size=(600, 600), legends=False):
     if legends:
         img = Draw.MolsToGridImage(mols, molsPerRow=per_row, subImgSize=img_size,
                                    legends=[m.GetProp("_Name") for m in mols])
@@ -31,13 +31,15 @@ def mols_to_2d(mols, out_file, per_row=4, img_size=(600, 600), legends=False):
     return
 
 
-def dir_sdfs_to_2d(dir_path, legends=False):
+def dir_sdfs_to_img_file(dir_path, legends=False):
     sdfs = sdfs_in_dir(dir_path)
     mols = sdfs_to_mols(sdfs)
-    mols_to_2d(mols, join(dir_path, 'grid_image.png'), legends=legends)
+    mols_to_img_file(mols, join(dir_path, 'grid_image.png'), legends=legends)
     return
 
 
-def smi_to_2d(smi):
-    mol = Chem.MolFromSmiles(smi)
-    Draw.ShowMol(mol)
+def display_mols(mols):
+    if type(mols) == rdkit.Chem.rdchem.Mol:
+        mols = [mols]
+    for mol in mols:
+        Draw.ShowMol(mol, size=(400, 400))

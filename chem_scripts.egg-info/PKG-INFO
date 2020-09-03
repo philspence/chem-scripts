@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: chem-scripts
+Version: 0.1
+Summary: UNKNOWN
+Home-page: https://github.com/philspence/chem-scripts
+Author: Phil Spence
+Author-email: philspence91@gmail.com
+License: UNKNOWN
+Description: # cheminfo-scripts
+        Set of python scripts that may be useful for cheminfomatics
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
